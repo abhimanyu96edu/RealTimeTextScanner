@@ -53,7 +53,7 @@ public class ExtractedTextActivity extends AppCompatActivity {
         retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), RealTimeTextScannerActivity.class));
+                startActivity(new Intent(getApplicationContext(), RealTimeTextScanner.class));
                 finish();
             }
         });
@@ -84,7 +84,7 @@ public class ExtractedTextActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), RealTimeTextScannerActivity.class));
+        startActivity(new Intent(getApplicationContext(), RealTimeTextScanner.class));
         finish();
     }
 }

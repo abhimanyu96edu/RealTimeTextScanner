@@ -14,7 +14,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -23,7 +22,7 @@ import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
 
-public class RealTimeTextScannerActivity extends AppCompatActivity {
+public class RealTimeTextScanner extends AppCompatActivity {
     SurfaceView cameraView;
     EditText textExtracted;
     CameraSource cameraSource;
@@ -75,7 +74,7 @@ public class RealTimeTextScannerActivity extends AppCompatActivity {
 
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if (!textRecognizer.isOperational()) {
-            Log.w("RealTimeTextScannerActivity", "Detector dependency are not available");
+            Log.w("RealTimeTextScanner", "Detector dependency are not available");
         } else {
 
             cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
@@ -91,7 +90,7 @@ public class RealTimeTextScannerActivity extends AppCompatActivity {
                     try {
                         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 
-                            ActivityCompat.requestPermissions(RealTimeTextScannerActivity.this,
+                            ActivityCompat.requestPermissions(RealTimeTextScanner.this,
                                     new String[]{Manifest.permission.CAMERA},
                                     RequestCameraPermissionID);
                             return;
