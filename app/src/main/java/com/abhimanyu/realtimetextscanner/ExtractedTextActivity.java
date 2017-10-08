@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class ExtractedTextActivity extends AppCompatActivity {
 
     EditText textExtracted;
@@ -27,7 +30,13 @@ public class ExtractedTextActivity extends AppCompatActivity {
         retry = (Button) findViewById(R.id.retry);
         exit = (Button) findViewById(R.id.exit);
 
-        Toast.makeText(getApplicationContext(), " Welcome You Have Entered the Dragon !!", Toast.LENGTH_LONG).show();
+
+        // Load an ad into the AdMob banner view.
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .setRequestAgent("android_studio:ad_template").build();
+        adView.loadAd(adRequest);
+
 
         text = getIntent().getExtras().getString("ExtractedText");
         textExtracted.setText(text);

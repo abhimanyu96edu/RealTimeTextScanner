@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RealTimeTextScanner</string>
+
+
+    <!-- TEST IDS-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>
